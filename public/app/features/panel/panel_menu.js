@@ -14,6 +14,7 @@ function (angular, $, _, Tether) {
           '<span class="panel-title drag-handle pointer">' +
             '<span class="icon-gf panel-alert-icon"></span>' +
             '<span class="panel-title-text drag-handle">{{ctrl.panel.title | interpolateTemplateVars:this}}</span>' +
+            '<span class="pull-right" style="color:#FF671B" ng-show="ctrl.exportCsv" ng-click="ctrl.exportCsv()">Export CSV</span>' +
             '<span class="panel-time-info" ng-show="ctrl.timeInfo"><i class="fa fa-clock-o"></i> {{ctrl.timeInfo}}</span>' +
           '</span>';
 
@@ -100,6 +101,11 @@ function (angular, $, _, Tether) {
           }
 
           var showMenu = function(e) {
+            //hide panel menu for panel click action.
+            if (!ctrl.dashboard.meta.canEdit) {
+              return;
+            }
+
             // if menu item is clicked and menu was just removed from dom ignore this event
             if (!$.contains(document, e.target)) {
               return;
