@@ -15,7 +15,6 @@ function (angular, $, _, Tether) {
             '<span class="icon-gf panel-alert-icon"></span>' +
             '<span class="panel-title-text drag-handle">{{ctrl.panel.title | interpolateTemplateVars:this}}</span>' +
             '<span class="pull-right" style="color:#FF671B" ng-show="ctrl.exportCsv" ng-click="ctrl.exportCsv()">Export CSV</span>' +
-            '<span class="panel-time-info" ng-show="ctrl.timeInfo"><i class="fa fa-clock-o"></i> {{ctrl.timeInfo}}</span>' +
           '</span>';
 
       function createMenuTemplate(ctrl) {
