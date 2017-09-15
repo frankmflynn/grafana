@@ -56,13 +56,13 @@ export function exportTableDataToCsv(table, excel = false) {
   var text = excel ? 'sep=;\n' : '';
     // add header
     _.each(table.columns, function(column) {
-        text += (column.title || column.text) + ';';
+        text += '"' + (column.title || column.text) + '",';
     });
     text += '\n';
     // process data
     _.each(table.rows, function(row) {
         _.each(row, function(value) {
-            text += value + ';';
+            text += '"' + value + '",';
         });
         text += '\n';
     });
