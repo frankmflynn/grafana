@@ -92,6 +92,9 @@ export class DashRowCtrl {
   }
 
   toggleCollapse() {
+    if (!this.row.collapse) {
+      return;
+    }
     this.closeDropView();
     this.row.collapse = !this.row.collapse;
   }

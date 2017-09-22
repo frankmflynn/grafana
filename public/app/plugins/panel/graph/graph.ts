@@ -657,12 +657,12 @@ coreModule.directive('grafanaGraph', function($rootScope, timeSrv, popoverSrv) {
           //   eventManager.updateTime(ranges.xaxis);
           // });
         } else {
-          scope.$apply(function() {
-            timeSrv.setTime({
+          /*scope.$apply(function() {
+            etimeSrv.setTim({
               from  : moment.utc(ranges.xaxis.from),
               to    : moment.utc(ranges.xaxis.to),
             });
-          });
+          });*/
         }
       });
 
